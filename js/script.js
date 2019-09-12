@@ -70,8 +70,9 @@
 
     const articles = document.querySelectorAll(optArticleSelector);
 
-    for (let article of articles) {
+    let html = '';
 
+    for (let article of articles) {
       /* [DONE] get the article id */
 
       const articleID = article.getAttribute('id');
@@ -82,10 +83,18 @@
       const articleTitle = article.querySelector(optTitleSelector).innerHTML;
       console.log('article title: ', articleTitle);
 
-      /* create HTML of the link */
+      /* [DONE] create HTML of the link */
 
-      /* add link to the titleList */
+      const linkHTML = '<li><a href="#' + articleID + '"><span>' + articleTitle + '</span></a></li>';
+      console.log(linkHTML);
+
+      /* [DONE] add link to the titleList */
+
+      html = html + linkHTML;
+      console.log(html);
     }
+
+    titleList.innerHTML = html;
   }
 
   generateTitleLinks();
