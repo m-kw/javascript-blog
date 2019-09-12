@@ -12,7 +12,7 @@
 
     for (let activeLink of activeLinks) {
       activeLink.classList.remove('active');
-    };
+    }
 
     /* [DONE] add class 'active' to the clicked link */
 
@@ -26,7 +26,7 @@
 
     for (let activeArticle of activeArticles) {
       activeArticle.classList.remove('active');
-    };
+    }
 
     /* [DONE] get 'href' attribute from the clicked link */
 
