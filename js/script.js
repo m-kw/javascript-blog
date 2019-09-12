@@ -29,10 +29,14 @@ function titleClickHandler(event) {
   };
 
   /* [DONE] get 'href' attribute from the clicked link */
+
   const hrefAttribute = clickedElement.getAttribute('href');
   console.log('href attribute: ', hrefAttribute);
 
-  /* [IN PROGRESS] find the correct article using the selector (value of 'href' attribute) */
+  /* [DONE] find the correct article using the selector (value of 'href' attribute) */
+
+  const activeArticle = document.querySelector(hrefAttribute);
+  console.log('active article: ', activeArticle);
 
   /* add class 'active' to the correct article */
 }
