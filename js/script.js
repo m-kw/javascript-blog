@@ -43,9 +43,9 @@
     activeArticle.classList.add('active');
   }
 
-  const optArticleSelector = '.post',
-        optTitleSelector = '.post-title',
-        optTitleListSelector = '.titles';
+  const optArticleSelector = '.post';
+  const optTitleSelector = '.post-title';
+  const optTitleListSelector = '.titles';
 
   function generateTitleLinks() {
     console.log('titleLinks created!');

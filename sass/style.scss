@@ -2,8 +2,8 @@
 
 /* Variables */
 
-$color-light: #fff;
-$color-dark: #444;
+$color-light: #E1D1B7;
+$color-dark: #000000;
 
 $font-logo: 'Sacramento', cursive;
 $font-header: 'Oswald', sans-serif;
@@ -16,9 +16,9 @@ $font-text: 'Source Sans Pro', sans-serif;
 }
 
 body {
-  background: $color-light;
+  background: $color-dark;
   font-family: $font-text;
-  color: $color-dark;
+  color: $color-light;
   font-weight: 300;
   font-size: 16px;
   line-height: 1.7;
@@ -37,7 +37,7 @@ body {
   span {
     text-transform: none;
     font-weight: 400;
-    color: lighten($color-dark, 20%);
+    color: lighten($color-light, 20%);
   }
 }
 
@@ -57,21 +57,39 @@ body {
 }
 
 .sidebar, .posts {
-  background: $color-light;
-  margin-right: 10px;
-  padding: 40px;
-  border: 1px solid $color-dark;
+  background: $color-dark;
+  margin-right: 30px;
+  padding: 10px 40px;
+  /* border: 1px solid $color-light; */
   border-radius: 5px;
+}
+
+/* Splash */
+
+.splash {
+  position: relative;
+  height: 40vh;
+  background-image: url('https://i.ibb.co/6rX25S0/mohammad-metri-1o-Kx-SKSOow-E-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 30px;
 }
 
 /* Logo */
 
-.logo {
-  font-family: $font-logo;
-  font-weight: 400;
-  font-size: 104px;
-  line-height: 1;
-  text-align: center;
+.splash-inner {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin-bottom: 35px;
+  .logo {
+    font-family: $font-logo;
+    font-weight: 400;
+    font-size: 104px;
+    line-height: 1;
+    text-align: center;
+    margin: 0;
+  }
 }
 
 /* Lists */
@@ -80,8 +98,13 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  a {
+    color: $color-light;
+    text-decoration: none;
+  }
   .active {
     font-weight: bold;
+    color: #3D2620;
   }
 }
 
@@ -100,6 +123,9 @@ body {
 }
 
 /* Post */
+.posts {
+  box-shadow: 2px 5px 35px 1px rgba(225,209,183,1);
+}
 
 .post {
   display: none;

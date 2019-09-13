@@ -6,9 +6,9 @@
 }
 
 body {
-  background: #fff;
+  background: #000000;
   font-family: "Source Sans Pro", sans-serif;
-  color: #444;
+  color: #E1D1B7;
   font-weight: 300;
   font-size: 16px;
   line-height: 1.7;
@@ -29,7 +29,7 @@ body {
 .section-title span {
   text-transform: none;
   font-weight: 400;
-  color: #777777;
+  color: white;
 }
 
 /* Layout */
@@ -50,20 +50,38 @@ body {
 }
 
 .sidebar, .posts {
-  background: #fff;
-  margin-right: 10px;
-  padding: 40px;
-  border: 1px solid #444;
+  background: #000000;
+  margin-right: 30px;
+  padding: 10px 40px;
+  /* border: 1px solid $color-light; */
   border-radius: 5px;
 }
 
+/* Splash */
+.splash {
+  position: relative;
+  height: 40vh;
+  background-image: url("https://i.ibb.co/6rX25S0/mohammad-metri-1o-Kx-SKSOow-E-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 30px;
+}
+
 /* Logo */
-.logo {
+.splash-inner {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin-bottom: 35px;
+}
+
+.splash-inner .logo {
   font-family: "Sacramento", cursive;
   font-weight: 400;
   font-size: 104px;
   line-height: 1;
   text-align: center;
+  margin: 0;
 }
 
 /* Lists */
@@ -73,8 +91,14 @@ body {
   padding: 0;
 }
 
+.list a {
+  color: #E1D1B7;
+  text-decoration: none;
+}
+
 .list .active {
   font-weight: bold;
+  color: #3D2620;
 }
 
 .list-horizontal li {
@@ -87,6 +111,10 @@ body {
 }
 
 /* Post */
+.posts {
+  box-shadow: 2px 5px 35px 1px #e1d1b7;
+}
+
 .post {
   display: none;
 }
