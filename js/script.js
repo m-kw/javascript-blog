@@ -38,6 +38,17 @@
     const activeArticle = document.querySelector(hrefAttribute);
     console.log('active article: ', activeArticle);
 
+    /* set .posts height according to article height */
+
+    let activePostHeight = activeArticle.clientHeight;
+    console.log('active post height: ', activePostHeight);
+
+    let posts = document.querySelector('.posts');
+    let postsHeight = posts.clientHeight;
+    console.log('posts height: ', postsHeight);
+
+    posts.style.height = activePostHeight + "px";
+
     /* [DONE] add class 'active' to the correct article */
 
     activeArticle.classList.add('active');
