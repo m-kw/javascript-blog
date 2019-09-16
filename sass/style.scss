@@ -4,6 +4,7 @@
 
 $color-light: #E1D1B7;
 $color-dark: #000000;
+$color-active: #3D2620;
 
 $font-logo: 'Sacramento', cursive;
 $font-header: 'Oswald', sans-serif;
@@ -66,31 +67,74 @@ body {
 /* Splash */
 
 .splash {
-  position: relative;
-  height: 450px;
-  background-image: url('https://i.ibb.co/6rX25S0/mohammad-metri-1o-Kx-SKSOow-E-unsplash.jpg');
+  height: 70vh;
+  width: calc(100vw - 32px);
+  background-image: url('/images/splash.png');
   background-size: cover;
   background-attachment: fixed;
-  background-position: 0 -280px;
-  margin-bottom: 30px;
+  background-position: top;
 }
 
 /* Logo */
 
-.splash-inner {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  margin-bottom: 35px;
-  .logo {
-    font-family: $font-logo;
-    font-weight: 400;
-    font-size: 104px;
-    line-height: 1;
-    text-align: center;
-    margin: 0;
+.logo {
+  height: 30vh;
+  font-family: $font-header;
+  font-weight: 400;
+  font-size: 100px;
+  text-align: center;
+  margin: 0;
+  padding: 30px;
+  }
+
+
+/* mobile-menu */
+
+.mobile-menu {
+  display: none;
+  text-align: center;
+  margin: 0 auto 60px auto;
+  padding: 0 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu {
+  padding: 0;
+  li {
+    position: relative;
+    display: inline-block;
+    margin: 0 30px;
+    ul {
+      display: none;
+      position: absolute;
+      background: rgba(255,255,255,0.85);
+      width: 70vw;
+      left: -150px;
+      z-index: 1001;
+      padding: 20px 0;
+      a {
+        color: $color-dark;
+        &:hover {
+          color: $color-light;
+        }
+      }
+    }
+    &:hover ul {
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      color: $color-light;
+      &:hover {
+        font-weight: bold;
+        color: $color-active;
+      }
+    }
   }
 }
+
+
 
 /* Lists */
 
@@ -104,7 +148,7 @@ body {
   }
   .active {
     font-weight: bold;
-    color: #3D2620;
+    color: $color-active;
   }
 }
 
@@ -128,6 +172,7 @@ body {
   position: relative;
   box-shadow: 2px 5px 35px 1px rgba(225,209,183,1);
   min-height: 520px;
+  z-index: 0;
   //overflow: auto;
 }
 
@@ -153,5 +198,28 @@ body {
   display: flex;
   p {
     margin: 0 10px 0 0;
+  }
+}
+
+/* Media */
+
+@media (max-width: 767px) {
+  .splash {
+    height: 30vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+  }
+  .logo {
+    height: auto;
+  }
+  .sidebar {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
+  .posts {
+    margin: 0 30px;
   }
 }
