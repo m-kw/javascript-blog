@@ -89,14 +89,23 @@
     }
 
     titleList.innerHTML = html;
-    const mobileList = document.querySelector('.mobile-list');
-    mobileList.innerHTML = html;
 
     const links = document.querySelectorAll('.titles a');
     console.log('links: ', links);
 
     for (let link of links) {
       link.addEventListener('click', titleClickHandler);
+    }
+
+    /* mobile version */
+
+    const mobileList = document.querySelector('.mobile-list');
+    mobileList.innerHTML = html;
+
+    const mobileLinks = document.querySelectorAll('.mobile-list a');
+
+    for (let mobileLink of mobileLinks) {
+      mobileLink.addEventListener('click', titleClickHandler);
     }
 
   }
@@ -121,12 +130,21 @@
     console.log('posts height: ', postsHeight);
 
     posts.style.height = activeArticleHeight + 'px';
-    }
+
 
     const links = document.querySelectorAll('.titles a');
 
     for (let link of links) {
       link.addEventListener('click', recalculatePostsHeight);
+    }
+
+    /* mobile version */
+
+    const mobileLinks = document.querySelectorAll('.mobile-list a');
+
+    for (let mobileLink of mobileLinks) {
+      mobileLink.addEventListener('click', recalculatePostsHeight);
+    }
   }
 
   recalculatePostsHeight();
