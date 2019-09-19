@@ -41,6 +41,8 @@
     /* [DONE] add class 'active' to the correct article */
 
     activeArticle.classList.add('active');
+
+    recalculatePostsHeight();
   }
 
   const optArticleSelector = '.post';
@@ -97,56 +99,24 @@
       link.addEventListener('click', titleClickHandler);
     }
 
-    /* mobile version */
-
-    const mobileList = document.querySelector('.mobile-list');
-    mobileList.innerHTML = html;
-
-    const mobileLinks = document.querySelectorAll('.mobile-list a');
-
-    for (let mobileLink of mobileLinks) {
-      mobileLink.addEventListener('click', titleClickHandler);
-    }
-
   }
 
   generateTitleLinks();
 
   function recalculatePostsHeight() {
-    console.log('Recalculation done!');
-
-    /* find active article and its height */
-
-    const activeArticle = document.querySelector('.posts article.active');
-    console.log('active article: ', activeArticle);
-
-    const activeArticleHeight = activeArticle.clientHeight;
-    console.log('active article height: ', activeArticleHeight);
-
-    /* find posts section and give it article's height */
 
     const posts = document.querySelector('.posts');
-    let postsHeight = posts.clientHeight;
-    console.log('posts height: ', postsHeight);
+
+    const activeArticle = document.querySelector('.posts article.active');
+    const activeArticleHeight = activeArticle.clientHeight;
 
     posts.style.height = activeArticleHeight + 'px';
-
-
-    const links = document.querySelectorAll('.titles a');
-
-    for (let link of links) {
-      link.addEventListener('click', recalculatePostsHeight);
-    }
-
-    /* mobile version */
-
-    const mobileLinks = document.querySelectorAll('.mobile-list a');
-
-    for (let mobileLink of mobileLinks) {
-      mobileLink.addEventListener('click', recalculatePostsHeight);
-    }
   }
 
   recalculatePostsHeight();
+
+  const firstArticle = document.querySelector('#article-1');
+  firstArticle.click();
+  console.log('First article was clicked');
 
 }

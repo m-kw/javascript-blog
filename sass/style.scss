@@ -44,17 +44,25 @@ body {
 
 /* Layout */
 
-.wrapper {
+.row {
   display: flex;
+  justify-content: center;
 }
 
-.sidebar {
-  flex: 1 0 0;
+.sidebar-left {
+//  flex: 1 0 0;
+  order: 1
 }
 
 .posts {
   flex: 2 0 0;
+  order: 2
 }
+
+.sidebar-right {
+  order: 3;
+}
+
 
 .sidebar, .posts {
   background: $color-dark;
@@ -62,6 +70,16 @@ body {
   padding: 10px 40px;
   /* border: 1px solid $color-light; */
   border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  font-family: $font-text;
+  color: $color-light;
+  li {
+    font-weight: normal;
+  }
 }
 
 /* Splash */
@@ -86,55 +104,6 @@ body {
   margin: 0;
   padding: 30px;
   }
-
-
-/* mobile-menu */
-
-.mobile-menu {
-  display: none;
-  text-align: center;
-  margin: 0 auto 60px auto;
-  padding: 0 30px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.menu {
-  padding: 0;
-  li {
-    position: relative;
-    display: inline-block;
-    margin: 0 30px;
-    ul {
-      display: none;
-      position: absolute;
-      background: rgba(255,255,255,0.85);
-      width: 70vw;
-      left: -150px;
-      z-index: 1001;
-      padding: 20px 0;
-      a {
-        color: $color-dark;
-        &:hover {
-          color: $color-light;
-        }
-      }
-    }
-    &:hover ul {
-      display: block;
-    }
-    a {
-      text-decoration: none;
-      color: $color-light;
-      &:hover {
-        font-weight: bold;
-        color: $color-active;
-      }
-    }
-  }
-}
-
-
 
 /* Lists */
 
@@ -206,7 +175,7 @@ body {
 
 /* Media */
 
-@media (max-width: 767px) {
+@media (max-width: 992px) {
   .splash {
     height: 30vh;
     background-repeat: no-repeat;
@@ -216,13 +185,21 @@ body {
   .logo {
     height: auto;
   }
-  .sidebar {
-    display: none;
-  }
-  .mobile-menu {
-    display: block;
-  }
   .posts {
     margin: 0 30px;
+    flex: auto;
   }
+  .sidebar {
+    order: 1;
+  }
+  .tags-wrap {
+    display: none;
+  }
+  .list {
+    display: none;
+  }
+  .section-title:hover .list {
+    display: block;
+  }
+
 }
