@@ -114,6 +114,7 @@ a {
   a {
     color: $color-light;
     text-decoration: none;
+    padding: 5px;
   }
   .active {
     font-weight: bold;
@@ -191,11 +192,11 @@ a {
   }
   .sidebar {
     order: 1;
+    .list {
+      display: none;
+    }
   }
   .tags-wrap {
-    display: none;
-  }
-  .list {
     display: none;
   }
   .section-title:hover .list {

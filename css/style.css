@@ -107,6 +107,7 @@ a li {
 .list a {
   color: #E1D1B7;
   text-decoration: none;
+  padding: 5px;
 }
 
 .list .active {
@@ -182,10 +183,10 @@ a li {
     -ms-flex-order: 1;
         order: 1;
   }
-  .tags-wrap {
+  .sidebar .list {
     display: none;
   }
-  .list {
+  .tags-wrap {
     display: none;
   }
   .section-title:hover .list {
