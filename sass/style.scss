@@ -50,7 +50,6 @@ body {
 }
 
 .sidebar-left {
-//  flex: 1 0 0;
   order: 1
 }
 
@@ -62,7 +61,6 @@ body {
 .sidebar-right {
   order: 3;
 }
-
 
 .sidebar, .posts {
   background: $color-dark;
@@ -112,7 +110,6 @@ a {
   margin: 0;
   padding: 0;
   a {
-    color: $color-light;
     text-decoration: none;
     padding: 5px;
   }
@@ -175,6 +172,37 @@ a {
   p {
     margin: 0 10px 0 0;
   }
+}
+
+/* Tags Cloud */
+
+.tag-size-1 {
+  font-size: 70%;
+}
+
+.tag-size-2 {
+  font-size: 90%;
+  color: #EEC584;
+}
+
+.tag-size-3 {
+  font-size: 105%;
+  color: #C8AB83;
+}
+
+.tag-size-4 {
+  font-size: 120%;
+  color: #CACAAA;
+}
+
+.tag-size-5 {
+  font-size: 140%;
+  color: #7F636E;
+}
+
+.tag-size-6 {
+  font-size: 200%;
+  color: #55868C;
 }
 
 /* Media */
