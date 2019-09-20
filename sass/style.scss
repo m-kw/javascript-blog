@@ -161,6 +161,9 @@ a {
 
 .post-author {
   font-style: italic;
+  li {
+    list-style: none;
+  }
 }
 
 .post-title {

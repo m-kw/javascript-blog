@@ -150,6 +150,10 @@ a li {
   font-style: italic;
 }
 
+.post-author li {
+  list-style: none;
+}
+
 .post-title {
   margin-top: 0;
 }
