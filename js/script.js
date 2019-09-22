@@ -1,13 +1,15 @@
 'use strict';
 {
-
-  const optArticleSelector = '.post';
-  const optTitleSelector = '.post-title';
-  const optTitleListSelector = '.titles';
-  const optArticleTagsSelector = '.post-tags .list';
-  const optTagsListSelector = '.tags-wrap .list';
-  const optCloudClassCount = 6;
-  const optCloudClassPrefix = 'tag-size-';
+  const opts = {
+    articleSelector : '.post',
+    titleSelector : '.post-title',
+    titleListSelector : '.titles',
+    articleTagsSelector : '.post-tags .list',
+    tagsListSelector : '.tags-wrap .list',
+    cloudClassCount : 6,
+    cloudClassPrefix : 'tag-size-',
+    authorListSelector : '.sidebar-right .authors',
+  };
 
   generateTitleLinks();
   recalculatePostsHeight();
@@ -65,7 +67,7 @@
 
     /* [DONE] remove contents of titleList */
 
-    const titleList = document.querySelector(optTitleListSelector);
+    const titleList = document.querySelector(opts.titleListSelector);
 
     function clearMessages() {
       titleList.innerHTML = '';
@@ -75,7 +77,7 @@
 
     /* for all articles */
 
-    const articles = document.querySelectorAll(optArticleSelector + customSelector);
+    const articles = document.querySelectorAll(opts.articleSelector + customSelector);
 
     let html = '';
 
@@ -86,7 +88,7 @@
 
       /* [DONE] find the article title */
 
-      const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+      const articleTitle = article.querySelector(opts.titleSelector).innerHTML;
 
       /* [DONE] create HTML of the link */
 
@@ -151,10 +153,10 @@
     const percentage = normalizedValue / normalizedMax;
     console.log('percentage: ', percentage);
 
-    const classNumber = Math.floor(percentage * (optCloudClassCount - 1) + 1);
+    const classNumber = Math.floor(percentage * (opts.cloudClassCount - 1) + 1);
     console.log('classNumber: ', classNumber);
 
-    const className = optCloudClassPrefix + classNumber;
+    const className = opts.cloudClassPrefix + classNumber;
     console.log('className: ', className);
 
     return className;
@@ -169,13 +171,13 @@
     console.log('allTags: ', allTags);
 
     /* find all articles */
-    const articles = document.querySelectorAll(optArticleSelector);
+    const articles = document.querySelectorAll(opts.articleSelector);
 
     /* START LOOP: for every article: */
     for (let article of articles) {
 
       /* find tags wrapper */
-      const tagsWrapper = article.querySelector(optArticleTagsSelector);
+      const tagsWrapper = article.querySelector(opts.articleTagsSelector);
       console.log('tags-wrapper: ', tagsWrapper);
 
       /* make html variable with empty string */
@@ -220,7 +222,7 @@
     }
 
     /* find list of tags in right column */
-    const tagList = document.querySelector(optTagsListSelector);
+    const tagList = document.querySelector(opts.tagsListSelector);
 
     const tagsParams = calculateParams(allTags);
     console.log('tagsParams: ', tagsParams);
@@ -311,8 +313,11 @@
   function generateAuthors() {
     console.log('Authors generated!');
 
+    const allAuthors = {};
+    console.log('all authors: ', allAuthors);
+
     /* find all articles */
-    const articles = document.querySelectorAll(optArticleSelector);
+    const articles = document.querySelectorAll(opts.articleSelector);
 
     /* START LOOP: for all articles */
     for (let article of articles) {
@@ -332,17 +337,41 @@
       /* add link to html variable */
       html = html + authorLink;
 
+      if (!allAuthors.hasOwnProperty(author)) {
+        allAuthors[author] = 1;
+      } else {
+        allAuthors[author]++;
+      }
+
       /* insert html variable into the author wrapper */
       authorWrapper.innerHTML = html;
 
       /* END LOOP: for all articles */
     }
 
+    const authorList = document.querySelector(opts.authorListSelector);
+
+    const authorParams = calculateParams(allAuthors);
+    console.log('authorParams: ', authorParams);
+
+    let allAuthorsHtml ='';
+
+    for (let author in allAuthors) {
+      const link = '<li><a href="#author-' + author + '">' + author + ' (' + allAuthors[author] + ')</a></li>';
+      console.log(link);
+
+      allAuthorsHtml += link;
+    }
+
+    authorList.innerHTML = allAuthorsHtml;
+
+
   }
 
   function authorClickHandler (event) {
     console.log(event);
     event.preventDefault();
+    console.log('author clicked');
 
     const clickedElement = this;
 

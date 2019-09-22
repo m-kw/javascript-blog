@@ -35,10 +35,19 @@ body {
   text-transform: uppercase;
   font-family: $font-header;
   font-weight: 600;
-  span {
-    text-transform: none;
-    font-weight: 400;
-    color: lighten($color-light, 20%);
+  }
+  a {
+    span {
+      font-size: 18px;
+      text-transform: none;
+      font-family: $font-text;
+      font-weight: normal;
+    }
+    .authors, .titles {
+      font-size: 16px;
+      text-transform: none;
+      font-family: $font-text;
+      font-weight: normal;
   }
 }
 
@@ -72,12 +81,8 @@ body {
 
 a {
   text-decoration: none;
-  font-weight: bold;
   font-family: $font-text;
   color: $color-light;
-  li {
-    font-weight: normal;
-  }
 }
 
 /* Splash */
@@ -124,8 +129,6 @@ a {
     display: inline-block;
   }
 }
-
-/* Authors */
 
 .films {
   li {
