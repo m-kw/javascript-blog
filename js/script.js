@@ -20,11 +20,11 @@
   };
 
   generateTitleLinks();
-  recalculatePostsHeight();
   generateTags();
   addClickListenersToTags();
   generateAuthors();
   addClickListenersToAuthors();
+  recalculatePostsHeight();
 
   function titleClickHandler(event) {
     event.preventDefault();
@@ -423,7 +423,7 @@
     }
 
     /* execute generateTitleLinks with author selector as argument */
-    generateTitleLinks('[data-authors="' + author + '"]');
+    generateTitleLinks('[data-author="' + author + '"]');
 
   }
 
