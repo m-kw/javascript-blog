@@ -31,6 +31,7 @@ body {
 }
 
 .section-title {
+  text-align: center;
   font-size: 22px;
   text-transform: uppercase;
   font-family: $font-header;
@@ -59,16 +60,20 @@ body {
 }
 
 .sidebar-left {
-  order: 1
+  flex: 1 0 0;
+  order: 1;
+  text-align: center;
 }
 
 .posts {
   flex: 2 0 0;
-  order: 2
+  order: 2;
 }
 
 .sidebar-right {
   order: 3;
+  flex: 1 0 0;
+  text-align: center;
 }
 
 .sidebar, .posts {
@@ -117,6 +122,7 @@ a {
   a {
     text-decoration: none;
     padding: 5px;
+    font-size: 18px;
   }
   .active {
     font-weight: bold;
@@ -177,7 +183,14 @@ a {
   }
 }
 
-/* Tags Cloud */
+/* Tags */
+
+.tags-wrap {
+  text-align: center;
+  li {
+    display: inline;
+  }
+}
 
 .tag-size-1 {
   font-size: 70%;

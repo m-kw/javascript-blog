@@ -20,6 +20,7 @@ body {
 }
 
 .section-title {
+  text-align: center;
   font-size: 22px;
   text-transform: uppercase;
   font-family: "Oswald", sans-serif;
@@ -49,8 +50,11 @@ a .authors, a .titles {
 }
 
 .sidebar-left {
+  -ms-flex: 1 0 0px;
+      flex: 1 0 0;
   -ms-flex-order: 1;
       order: 1;
+  text-align: center;
 }
 
 .posts {
@@ -63,6 +67,9 @@ a .authors, a .titles {
 .sidebar-right {
   -ms-flex-order: 3;
       order: 3;
+  -ms-flex: 1 0 0px;
+      flex: 1 0 0;
+  text-align: center;
 }
 
 .sidebar, .posts {
@@ -110,6 +117,7 @@ a {
 .list a {
   text-decoration: none;
   padding: 5px;
+  font-size: 18px;
 }
 
 .list .active {
@@ -168,7 +176,15 @@ a {
   margin: 0 10px 0 0;
 }
 
-/* Tags Cloud */
+/* Tags */
+.tags-wrap {
+  text-align: center;
+}
+
+.tags-wrap li {
+  display: inline;
+}
+
 .tag-size-1 {
   font-size: 70%;
 }
